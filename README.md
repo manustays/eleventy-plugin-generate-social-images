@@ -1,4 +1,4 @@
-# Eleventy Plugin: Generate Social Images [WIP]
+# Eleventy Plugin: Generate Social Images
 
 Dynamically generate social media images for your Eleventy blog pages.
 
