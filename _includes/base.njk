@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plugin Test Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Plugin Test Page</title>
+	<meta property="og:image" content="{% GenerateSocialImage 'Generate social images using SVG template', 'https://abhi.page' %}" />
+	<meta name="twitter:image" content="{% GenerateSocialImage title, meta.website_name %}" />
 </head>
 <body>
   {{ content | safe }}

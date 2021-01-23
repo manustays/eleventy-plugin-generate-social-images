@@ -1,20 +1,29 @@
-// Example use for the demo plugin:
-// {{ 'Steph' | hello | safe }}
+const genSocialImage = require('./utils/generateSocialImage.js');
+
+// Example use for the plugin:
+// {% GenerateSocialImage 'Page title...', 'Website name' %}
+
+// Defaults plugin config
+const defaults = {
+	outputDir: './_site/img/preview',
+	urlPath: '/img/preview'
+};
 
 module.exports = (eleventyConfig, options) => {
-  // Define defaults for your plugin config
-  const defaults = {
-    htmlTag: "h2",
-  };
 
-  // You can create more than filters as a plugin, but here's an example
-  eleventyConfig.addFilter("hello", (name) => {
-    // Combine defaults with user defined options
-    const { htmlTag } = {
-      ...defaults,
-      ...options,
-    };
+	// Combine defaults with user defined options
+	const { outputDir, urlPath, promoImage } = { ...defaults, ...options };
 
-    return `<${htmlTag}>Hello, ${name}!</${htmlTag}>`;
-  });
+	eleventyConfig.addAsyncShortcode("GenerateSocialImage", async (title, siteName) => {
+		if (!title) return '';
+
+		return await genSocialImage(
+			eleventyConfig.javascriptFunctions.slug(title),		// file-name
+			title,												// title
+			siteName,											// site-name
+			promoImage,											// promo-image
+			{ outputDir, urlPath }								// options
+		);
+	});
+
 };

@@ -20,14 +20,15 @@
     "eleventy-plugin"
   ],
   "author": {
-    "name": "username",
-    "url": "https://website.com"
+    "name": "Kumar Abhishek",
+    "url": "https://abhi.page"
   },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/manustays/eleventy-plugin-generate-social-images/issues"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1"
+    "@11ty/eleventy": "^0.11.1",
+    "sharp": "^0.27.0"
   }
 }
