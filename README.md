@@ -5,19 +5,30 @@ Dynamically generate social media images for your Eleventy blog pages.
 
 ## Usage
 
-Install the package:
+### STEP 1: Install the package:
 ```bash
 npm install @manustays/eleventy-plugin-generate-social-images
 ```
 
-Then, include it in your `.eleventy.js` config file:
+### STEP 2: Include it in your `.eleventy.js` config file:
 
 ```js
 const generateSocialImages = require("@manustays/eleventy-plugin-generate-social-images");
 
 module.exports = (eleventyConfig) => {
-  eleventyConfig.addPlugin(generateSocialImages);
+  eleventyConfig.addPlugin(generateSocialImages, {
+    promoImage: "./src/img/my_profile_pic.jpg",
+    outputDir: "./_site/img/preview",
+    urlPath: "/img/preview"
+  });
 };
+```
+
+### Step 3: Use in your template
+For example, in your `base.njk` template file, use it in the `<head>` for generating social image meta tags:
+```html
+<meta property="og:image" content="{% GenerateSocialImage title, meta.website_name %}" />
+<meta name="twitter:image" content="{% GenerateSocialImage title, meta.website_name %}" />
 ```
 
 ## Config Options
