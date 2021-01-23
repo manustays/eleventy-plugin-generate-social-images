@@ -1,7 +1,7 @@
 {
-  "name": "@scope/plugin-name",
+  "name": "@manustays/eleventy-plugin-generate-social-images",
   "version": "1.0.0",
-  "description": "Description of plugin",
+  "description": "Dynamically generate social media images for your Eleventy blog pages.",
   "homepage": "",
   "main": ".eleventy.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/username/repo-name.git"
+    "url": "git+https://github.com/manustays/eleventy-plugin-generate-social-images.git"
   },
   "keywords": [
     "11ty",
@@ -25,7 +25,7 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/username/repo-name/issues"
+    "url": "https://github.com/manustays/eleventy-plugin-generate-social-images/issues"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1"
