@@ -26,7 +26,7 @@ module.exports = (eleventyConfig) => {
 | ----------- | ------ | ------------- |-------------|
 | promoImage  | string |               | Path to a promo Image (ideally, circular) that will be embedded in the social-images |
 | outputDir   | string | "./\_site/img/preview" | Project-relative path to the output directory where images will be generated |
-| urlPath     | string | "/img/preview" | A path-prefix-esque directory for the <img src> attribute. e.g. `/img/` for `<img src="/img/MY_IMAGE.jpeg">` |
+| urlPath     | string | "/img/preview" | A path-prefix-esque directory for the &lt;img src&gt; attribute. e.g. `/img/` for `<img src="/img/MY_IMAGE.jpeg">` |
 
 
 ## Credits
