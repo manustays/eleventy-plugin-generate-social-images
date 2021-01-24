@@ -48,7 +48,8 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(generateSocialImages, {
     promoImage: "./src/img/my_profile_pic.jpg",
     outputDir: "./_site/img/preview",
-    urlPath: "/img/preview"
+    urlPath: "/img/preview",
+    siteName: "abhi.page"
   });
 };
 ```
@@ -56,8 +57,8 @@ module.exports = (eleventyConfig) => {
 ### Step 3: Use in your template
 For example, in your `base.njk` template file, use it in the `<head>` for generating social image meta tags:
 ```njk
-<meta property="og:image" content="{% GenerateSocialImage title, meta.website_name %}" />
-<meta name="twitter:image" content="{% GenerateSocialImage title, meta.website_name %}" />
+<meta property="og:image" content="{% GenerateSocialImage title %}" />
+<meta name="twitter:image" content="{% GenerateSocialImage title %}" />
 ```
 
 ## Config Options
@@ -67,6 +68,7 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 | promoImage  | string |               | Path to a promo Image (ideally, circular) that will be embedded in the social-images |
 | outputDir   | string | "./\_site/img/preview" | Project-relative path to the output directory where images will be generated |
 | urlPath     | string | "/img/preview" | A path-prefix-esque directory for the &lt;img src&gt; attribute. e.g. `/img/` for `<img src="/img/MY_IMAGE.jpeg">` |
+| siteName    | string |               | The website name to show on the social-image |
 
 
 ## Credits
