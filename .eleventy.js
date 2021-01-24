@@ -12,9 +12,9 @@ const defaults = {
 module.exports = (eleventyConfig, options) => {
 
 	// Combine defaults with user defined options
-	const { outputDir, urlPath, promoImage } = { ...defaults, ...options };
+	const { outputDir, urlPath, siteName, promoImage } = { ...defaults, ...options };
 
-	eleventyConfig.addAsyncShortcode("GenerateSocialImage", async (title, siteName) => {
+	eleventyConfig.addAsyncShortcode("GenerateSocialImage", async (title) => {
 		if (!title) return '';
 
 		return await genSocialImage(

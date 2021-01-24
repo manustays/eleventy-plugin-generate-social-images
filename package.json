@@ -1,6 +1,6 @@
 {
   "name": "@manustays/eleventy-plugin-generate-social-images",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Dynamically generate social media images for your Eleventy blog pages.",
   "homepage": "",
   "main": ".eleventy.js",
@@ -13,11 +13,15 @@
     "type": "git",
     "url": "git+https://github.com/manustays/eleventy-plugin-generate-social-images.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "11ty",
     "11ty-plugin",
     "eleventy",
-    "eleventy-plugin"
+	"eleventy-plugin",
+	"social-image"
   ],
   "author": {
     "name": "Kumar Abhishek",
