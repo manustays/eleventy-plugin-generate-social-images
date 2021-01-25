@@ -6,10 +6,10 @@ This plugin creates an async ShortCode that can be used in your templates to gen
 
 For example:
 ```njk
-{% GenerateSocialImage "How to load third-party Javascript on demand", "abhi.page/" %}
+{% GenerateSocialImage "How to load third-party Javascript on demand" %}
 ```
-will generate the following social image _(author image set in configuration)_:
-![](https://abhi.page/img/preview/how-to-load-third-party-javascript-on-demand.png)
+will generate the following social image _(website-name and author-image are set during configuration)_:
+[![](https://abhi.page/img/preview/how-to-load-third-party-javascript-on-demand.png)](https://abhi.page/notes/load-third-party-javascript-on-demand/)
 
 The social image is first created as SVG and then converted to PNG using [Sharp](https://github.com/lovell/sharp).
 
@@ -28,11 +28,6 @@ I created a new plugin because the above mentioned plugin...
 * Custom logic to wrap the title line in SVG (as Sharp does not support SVG foreignObject).
 * Adds an author/promo image using Sharp composite (as Sharp does not support external image in SVG).
 
-## TODO
-- [ ] Cache result to avoid regenerating same image.
-- [ ] Better text-wrap logic for the page-title in SVG.
-- [ ] More customization options!
-
 ## Usage
 
 ### STEP 1: Install the package:
@@ -50,7 +45,7 @@ module.exports = (eleventyConfig) => {
     promoImage: "./src/img/my_profile_pic.jpg",
     outputDir: "./_site/img/preview",
     urlPath: "/img/preview",
-	siteName: "abhi.page",
+	siteName: "abhi.page/",
 	titleColor: "#fedb8b"
   });
 };
@@ -63,6 +58,7 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 <meta name="twitter:image" content="{% GenerateSocialImage title %}" />
 ```
 
+
 ## Config Options
 
 | Option      | Type   | Default       | Description |
@@ -72,6 +68,12 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 | urlPath     | string | "/img/preview" | A path-prefix-esque directory for the &lt;img src&gt; attribute. e.g. `/img/` for `<img src="/img/MY_IMAGE.jpeg">` |
 | siteName    | string |               | The website name to show on the social-image |
 | titleColor  | string | "white"       | The color of the page-title. |
+
+
+## TODO
+- [ ] Cache result to avoid regenerating same image.
+- [ ] Better text-wrap logic for the page-title in SVG.
+- [ ] More customization options!
 
 
 ## Credits
