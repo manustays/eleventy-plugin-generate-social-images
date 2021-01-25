@@ -30,6 +30,7 @@ I created a new plugin because the above mentioned plugin...
 
 ## TODO
 - [ ] Cache result to avoid regenerating same image.
+- [ ] Better text-wrap logic for the page-title in SVG.
 - [ ] More customization options!
 
 ## Usage
@@ -74,4 +75,4 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 ## Credits
 
 * Original idea from [eleventy-plugin-social-images](https://github.com/5t3ph/eleventy-plugin-social-images)
-* I created my own version to avoid the Puppeteer dependency.
+* I created my own to avoid the Puppeteer dependency.

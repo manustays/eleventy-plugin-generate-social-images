@@ -6,13 +6,14 @@ const genSocialImage = require('./utils/generateSocialImage.js');
 // Defaults plugin config
 const defaults = {
 	outputDir: './_site/img/preview',
-	urlPath: '/img/preview'
+	urlPath: '/img/preview',
+	titleColor: '#FFF',
 };
 
 module.exports = (eleventyConfig, options) => {
 
 	// Combine defaults with user defined options
-	const { outputDir, urlPath, siteName, promoImage } = { ...defaults, ...options };
+	const { outputDir, urlPath, titleColor, siteName, promoImage } = { ...defaults, ...options };
 
 	eleventyConfig.addAsyncShortcode("GenerateSocialImage", async (title) => {
 		if (!title) return '';
@@ -22,7 +23,11 @@ module.exports = (eleventyConfig, options) => {
 			title,												// title
 			siteName,											// site-name
 			promoImage,											// promo-image
-			{ outputDir, urlPath }								// options
+			{													// options
+				outputDir,
+				urlPath,
+				titleColor
+			}
 		);
 	});
 
