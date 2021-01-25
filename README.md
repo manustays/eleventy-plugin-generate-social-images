@@ -50,7 +50,8 @@ module.exports = (eleventyConfig) => {
     promoImage: "./src/img/my_profile_pic.jpg",
     outputDir: "./_site/img/preview",
     urlPath: "/img/preview",
-    siteName: "abhi.page"
+	siteName: "abhi.page",
+	titleColor: "#fedb8b"
   });
 };
 ```
@@ -70,6 +71,7 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 | outputDir   | string | "./\_site/img/preview" | Project-relative path to the output directory where images will be generated |
 | urlPath     | string | "/img/preview" | A path-prefix-esque directory for the &lt;img src&gt; attribute. e.g. `/img/` for `<img src="/img/MY_IMAGE.jpeg">` |
 | siteName    | string |               | The website name to show on the social-image |
+| titleColor  | string | "white"       | The color of the page-title. |
 
 
 ## Credits
