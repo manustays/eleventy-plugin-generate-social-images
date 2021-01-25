@@ -1,6 +1,6 @@
 {
   "name": "@manustays/eleventy-plugin-generate-social-images",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Dynamically generate social media images for your Eleventy blog pages.",
   "homepage": "",
   "main": ".eleventy.js",
