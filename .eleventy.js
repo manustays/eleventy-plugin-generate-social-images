@@ -8,12 +8,14 @@ const defaults = {
 	outputDir: './_site/img/preview',
 	urlPath: '/img/preview',
 	titleColor: '#FFF',
+
+	hideTerminal: false
 };
 
 module.exports = (eleventyConfig, options) => {
 
 	// Combine defaults with user defined options
-	const { outputDir, urlPath, titleColor, siteName, promoImage } = { ...defaults, ...options };
+	const { outputDir, urlPath, titleColor, siteName, promoImage, hideTerminal } = { ...defaults, ...options };
 
 	eleventyConfig.addAsyncShortcode("GenerateSocialImage", async (title) => {
 		if (!title) return '';
@@ -26,7 +28,8 @@ module.exports = (eleventyConfig, options) => {
 			{													// options
 				outputDir,
 				urlPath,
-				titleColor
+				titleColor,
+				hideTerminal
 			}
 		);
 	});
