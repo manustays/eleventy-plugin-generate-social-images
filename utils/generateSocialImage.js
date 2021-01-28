@@ -2,6 +2,37 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require("sharp");
 
+
+/**
+ * Split a long title into multiple rows
+ */
+function wrapTitle(title, rowLength, maxRows)
+{
+	let title_rows = [];
+	words = title.split(/(?<=[^a-zA-Z0-9])/);
+	let _row = '';
+	words.forEach((wrd) => {
+		if (_row.length + wrd.length >= rowLength) {
+			title_rows.push(_row);
+			_row = '';
+		}
+		_row += wrd;
+	});
+	if (_row) {
+		title_rows.push(_row);
+	}
+
+	// Limit rows...
+	if (title_rows.length > maxRows) {
+		title_rows.length = maxRows;
+		title_rows[maxRows-1] += "…";
+	}
+
+	return title_rows;
+}
+
+
+
 async function generateSocialImage(filename, title, siteName, authorImage, options = {}) {
 	const { outputDir, urlPath, titleColor } = options;
 
@@ -31,24 +62,7 @@ async function generateSocialImage(filename, title, siteName, authorImage, optio
 	const line_height = 60;
 	const font_size = 38;
 
-	let title_rows = [];
-	words = title.split(/[ \r\n\t]+/);
-	let _row = '';
-	words.forEach((wrd) => {
-		if (_row.length + wrd.length >= line_length) {
-			title_rows.push(_row);
-			_row = '';
-		}
-		_row += (_row && ' ') + wrd;
-	});
-	if (_row) {
-		title_rows.push(_row);
-	}
-
-	// Limit rows...
-	if (title_rows.length > max_lines) {
-		title_rows.length = max_lines;
-	}
+	let title_rows = wrapTitle(title, line_length, max_lines);
 
 	const svgTitle = title_rows.reduce((p, c, i) => {
 		return p + `<text x="${start_x}" y="${start_y + (i * line_height)}" fill="${titleColor}" font-size="${font_size}px" font-weight="700">${c}</text>`;
@@ -77,8 +91,6 @@ async function generateSocialImage(filename, title, siteName, authorImage, optio
 			${svgTitle}
 			<text x="265" y="500" fill="#fff" font-size="30px" font-weight="700">${siteName}</text>
 		</g>
-
-		<!-- circle cx="1025" cy="453" r="126" stroke="#fedb8b" stroke-width="30" fill="none" / -->
 	</svg>`;
 
 	try {
