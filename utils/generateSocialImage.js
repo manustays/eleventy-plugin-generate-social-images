@@ -34,7 +34,7 @@ function wrapTitle(title, rowLength, maxRows)
 
 
 async function generateSocialImage(filename, title, siteName, authorImage, options = {}) {
-	const { outputDir, urlPath, titleColor, hideTerminal, bgColor } = options;
+	const { outputDir, urlPath, titleColor, hideTerminal, bgColor, customSVG } = options;
 
 	if (!(title && outputDir && urlPath)) {
 		console.error("eleventy-plugin-generate-social-images Error: Missing values");
@@ -86,6 +86,8 @@ async function generateSocialImage(filename, title, siteName, authorImage, optio
 		<rect x="0" y="0" width="1200" height="628" rx="0" ry="0" fill="${bgColor || 'url(#the-gradient)'}" />
 
 		${hideTerminal ? '' : terminalWindow}
+
+		${customSVG}
 
 		<g style="font-family:sans-serif">
 			${svgTitle}

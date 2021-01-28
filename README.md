@@ -70,7 +70,7 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 | titleColor  | string | "white"       | The color of the page-title |
 | bgColor     | string |               | Optional background color. Otherwise, shows the gradient pattern |
 | hideTerminal  | boolean | false      | If true, hides the terminal window design behind the title. |
-
+| customSVG     | string  |            | Custom SVG code to be added to the image. Use this to add your own design or text anywhere on the image |
 
 
 ## TODO

@@ -1,13 +1,14 @@
 {
   "name": "@manustays/eleventy-plugin-generate-social-images",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "Dynamically generate social media images for your Eleventy blog pages.",
   "homepage": "",
   "main": ".eleventy.js",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "bump": "npm --no-git-tag-version version"
+	"bump": "npm --no-git-tag-version version",
+	"publish": "npm publish --access=public || true"
   },
   "repository": {
     "type": "git",
