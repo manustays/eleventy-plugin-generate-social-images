@@ -75,7 +75,7 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 
 ## TODO
 - [ ] Cache result to avoid regenerating same image.
-- [ ] Better text-wrap logic for the page-title in SVG.
+- [*] Better text-wrap logic for the page-title in SVG.
 - [ ] More customization options!
 
 
