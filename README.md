@@ -2,6 +2,14 @@
 
 Dynamically generate social media images for your Eleventy blog pages.
 
+<a href="https://github.com/manustays/eleventy-plugin-generate-social-images/issues">![GitHub issues](https://img.shields.io/github/issues/manustays/eleventy-plugin-generate-social-images)</a>
+<a href="https://www.npmjs.com/package/@manustays/eleventy-plugin-generate-social-images" target="_blank">![npm (scoped)](https://img.shields.io/npm/v/@manustays/eleventy-plugin-generate-social-images)</a>
+<a href="https://abhi.page" target="_blank">![About Abhishek](https://img.shields.io/badge/about-me-blue)</a>
+<a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmanustays%2Feleventy-plugin-generate-social-images" target="_blank"><img alt="Twitter" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fmanustays%2Feleventy-plugin-generate-social-images"></a>
+<a href="https://twitter.com/intent/follow?screen_name=abhiweb" target="_blank">![Twitter Follow](https://img.shields.io/twitter/follow/abhiweb?label=Follow&style=social)</a>
+
+---
+
 This plugin creates an async ShortCode that can be used in your templates to generate social images.
 
 For example:
