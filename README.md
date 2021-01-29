@@ -76,7 +76,7 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 | lineBreakAt  | number | 35           | Maximum row length for wrapping the title. Required because SVG does not have auto-wrapping text. Should depends on the font used |
 
 ## Custom Fonts
-The [Sharp](https://github.com/lovell/sharp) library uses librsvg that uses [fontconfig](https://www.freedesktop.org/software/fontconfig/fontconfig-user) to load external fonts. Therefore the following steps are required:
+The [Sharp](https://github.com/lovell/sharp) library uses librsvg that uses [fontconfig](https://www.freedesktop.org/software/fontconfig/fontconfig-user) to load external fonts. Therefore, the following steps are required:
 1. Download your font file in project sub-folder. Eg: `./fonts/sans.ttf`
 2. Create a file `fonts.conf` with the following content:
    ```xml
