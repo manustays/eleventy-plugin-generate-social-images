@@ -10,13 +10,16 @@ const defaults = {
 	titleColor: '#FFF',
 	hideTerminal: false,
 	bgColor: '',
-	customSVG: ''
+	terminalBgColor: '#404040',
+	customSVG: '',
+	customFontFilename: '',
+	lineBreakAt: 35
 };
 
 module.exports = (eleventyConfig, options) => {
 
 	// Combine defaults with user defined options
-	const { outputDir, urlPath, titleColor, siteName, promoImage, hideTerminal, bgColor, customSVG } = { ...defaults, ...options };
+	const { outputDir, urlPath, titleColor, siteName, promoImage, hideTerminal, bgColor, terminalBgColor, customSVG, customFontFilename, lineBreakAt } = { ...defaults, ...options };
 
 	eleventyConfig.addAsyncShortcode("GenerateSocialImage", async (title) => {
 		if (!title) return '';
@@ -32,7 +35,10 @@ module.exports = (eleventyConfig, options) => {
 				titleColor,
 				hideTerminal,
 				bgColor,
-				customSVG
+				terminalBgColor,
+				customSVG,
+				customFontFilename,
+				lineBreakAt
 			}
 		);
 	});
