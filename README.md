@@ -53,7 +53,7 @@ module.exports = (eleventyConfig) => {
 
 ### Step 3: Use in your template
 For example, in your `base.njk` template file, use it in the `<head>` for generating social image meta tags:
-```njk
+```html
 <meta property="og:image" content="{% GenerateSocialImage title %}" />
 <meta name="twitter:image" content="{% GenerateSocialImage title %}" />
 ```
