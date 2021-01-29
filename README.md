@@ -94,9 +94,9 @@ The [Sharp](https://github.com/lovell/sharp) library uses librsvg that uses [fon
 
 ## TODO
 - [ ] Cache result to avoid regenerating same image
-- [*] Better text-wrap logic for the page-title in SVG
-- [*] Custom SVG
-- [*] Custom font
+- [x] Better text-wrap logic for the page-title in SVG
+- [x] Custom SVG
+- [x] Custom font
 - [ ] More customization options!
 
 
