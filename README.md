@@ -10,7 +10,18 @@ Dynamically generate social media images for your Eleventy blog pages. Unlike ot
 
 ---
 
-This plugin creates an async ShortCode that can be used to automatically generate social images in your Eleventy website or blog.
+1. [Introduction](#introduction)
+2. [Why another social-image generator?](#why-another-social-image-generator)
+3. [How does it work?](#how-does-it-work)
+4. [Installation and Usage](#installation-and-usage)
+5. [Config Options](#config-options)
+6. [Custom Fonts](#custom-fonts)
+7. [Todo](#todo)
+8. [Credits](#credits)
+
+
+## Introduction
+This plugin provides an 11ty ShortCode that can be used to automatically generate social images in your Eleventy website or blog.
 
 For example:
 ```
@@ -36,7 +47,7 @@ I created a new plugin because the above mentioned plugin...
 * Custom logic to wrap the title line in SVG (as Sharp does not support SVG foreignObject).
 * Adds an author/promo image using Sharp composite (as Sharp does not support external image in SVG).
 
-## Usage
+## Installation and Usage
 
 ### STEP 1: Install the package:
 ```bash
