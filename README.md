@@ -66,6 +66,8 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 <meta name="twitter:image" content="{% GenerateSocialImage title %}" />
 ```
 
+> **Note:** For a complete implementation example, [checkout my website on Github](https://github.com/manustays/abhi.page.11ty).
+
 
 ## Config Options
 
@@ -83,8 +85,9 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 | customFontFilename | string |        | Filename of custom local font used for title ([see **Custom Fonts**](#custom-fonts)) |
 | lineBreakAt  | number | 35           | Maximum row length for wrapping the title. Required because SVG does not have auto-wrapping text. Should depends on the font used |
 
+
 ## Custom Fonts
-The [Sharp](https://github.com/lovell/sharp) library uses librsvg that uses [fontconfig](https://www.freedesktop.org/software/fontconfig/fontconfig-user) to load external fonts. Therefore, the following steps are required:
+The [Sharp library](https://github.com/lovell/sharp) uses librsvg that uses [fontconfig](https://www.freedesktop.org/software/fontconfig/fontconfig-user) to load external fonts. Therefore, the following steps are required:
 1. Download your font file in project sub-folder. Eg: `./fonts/sans.ttf`
 2. Create a file `fonts.conf` with the following content:
    ```xml
