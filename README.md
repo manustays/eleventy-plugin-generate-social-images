@@ -10,10 +10,10 @@ Dynamically generate social media images for your Eleventy blog pages. Unlike ot
 
 ---
 
-This plugin creates an async ShortCode that can be used in your templates to generate social images.
+This plugin creates an async ShortCode that can be used to automatically generate social images in your Eleventy website or blog.
 
 For example:
-```njk
+```
 {% GenerateSocialImage "How to load third-party Javascript on demand" %}
 ```
 will generate the following social image _(website-name and author-image are set during configuration)_:
