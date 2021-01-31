@@ -1,6 +1,6 @@
-# Eleventy Plugin: Generate Social Images
+# Eleventy Plugin: Generate Social Images (using SVG)
 
-Dynamically generate social media images for your Eleventy blog pages.
+Dynamically generate social media images for your Eleventy blog pages. Unlike other similar plugins, this one uses SVG & does not depend on Puppeteer!
 
 <a href="https://github.com/manustays/eleventy-plugin-generate-social-images/issues">![GitHub issues](https://img.shields.io/github/issues/manustays/eleventy-plugin-generate-social-images)</a>
 <a href="https://www.npmjs.com/package/@manustays/eleventy-plugin-generate-social-images" target="_blank">![npm (scoped)](https://img.shields.io/npm/v/@manustays/eleventy-plugin-generate-social-images)</a>
