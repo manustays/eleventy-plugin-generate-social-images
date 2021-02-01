@@ -8,6 +8,8 @@ Dynamically generate social media images for your Eleventy blog pages. Unlike ot
 <a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmanustays%2Feleventy-plugin-generate-social-images" target="_blank"><img alt="Twitter" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fmanustays%2Feleventy-plugin-generate-social-images"></a>
 <a href="https://twitter.com/intent/follow?screen_name=abhiweb" target="_blank">![Twitter Follow](https://img.shields.io/twitter/follow/abhiweb?label=Follow&style=social)</a>
 
+[![](https://abhi.page/img/preview/eleventy-plugin-for-generating-social-images-(using-svg).png)](https://abhi.page/notes/11ty-plugin-generate-social-images/)
+
 ---
 
 1. [Introduction](#introduction)
@@ -27,8 +29,7 @@ For example:
 ```
 {% GenerateSocialImage "Eleventy plugin for generating social images (using SVG)" %}
 ```
-will generate the following social image _(website-name and author-image are set during configuration)_:
-[![](https://abhi.page/img/preview/eleventy-plugin-for-generating-social-images-(using-svg).png)](https://abhi.page/notes/11ty-plugin-generate-social-images/)
+will generate the social image on top of this page 👆🏼 _(website-name and author-image are set during configuration)_:
 
 The social image is first created as SVG and then converted to PNG using [Sharp](https://github.com/lovell/sharp).
 
@@ -65,7 +66,8 @@ module.exports = (eleventyConfig) => {
     outputDir: "./_site/img/preview",
     urlPath: "/img/preview",
 	siteName: "abhi.page/",
-	titleColor: "#fedb8b"
+	titleColor: "#fedb8b",
+	bgGradient: ['#ABB8C0', '#A0ACB3']
   });
 };
 ```
@@ -90,6 +92,7 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 | siteName    | string |               | The website name to show on the social-image |
 | titleColor  | string | "white"       | The color of the page-title |
 | bgColor     | string |               | Optional background color. Otherwise, shows the gradient pattern |
+| bgGradient  | array  | ['#647DEE', '#7F53AC'] | An array of colors to add as the background gradient. If setting the gradient, do not pass the 'bgColor' option |
 | terminalBgColor| string | "#404040"  | Background color of the terminal window design |
 | hideTerminal  | boolean | false      | If true, hides the terminal window design behind the title |
 | customSVG     | string  |            | Custom SVG code to be added to the image. Use this to add your own design or text anywhere on the image |
