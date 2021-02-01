@@ -25,10 +25,10 @@ This plugin provides an 11ty ShortCode that can be used to automatically generat
 
 For example:
 ```
-{% GenerateSocialImage "How to load third-party Javascript on demand" %}
+{% GenerateSocialImage "Eleventy plugin for generating social images (using SVG)" %}
 ```
 will generate the following social image _(website-name and author-image are set during configuration)_:
-[![](https://abhi.page/img/preview/how-to-load-third-party-javascript-on-demand.png)](https://abhi.page/notes/load-third-party-javascript-on-demand/)
+[![](https://abhi.page/img/preview/eleventy-plugin-for-generating-social-images-(using-svg).png)](https://abhi.page/notes/11ty-plugin-generate-social-images/)
 
 The social image is first created as SVG and then converted to PNG using [Sharp](https://github.com/lovell/sharp).
 
