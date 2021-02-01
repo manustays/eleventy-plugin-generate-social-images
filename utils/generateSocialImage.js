@@ -9,7 +9,7 @@ const sharp = require("sharp");
 function wrapTitle(title, rowLength, maxRows)
 {
 	let title_rows = [];
-	words = title.split(/(?<=[^a-zA-Z0-9])/);
+	words = title.split(/(?<=[^a-zA-Z0-9()<>""''])/);
 	let _row = '';
 	words.forEach((wrd) => {
 		if (_row.length + wrd.length >= rowLength) {
@@ -94,7 +94,14 @@ async function generateSocialImage(filename, title, siteName, authorImage, optio
 				}`;
 	}
 
-	const terminalWindow = `<rect x="100" y="64" width="1000" height="500" rx="16" ry="16" fill="${terminalBgColor}" stroke-width="1" stroke="#aaa" />
+	const terminalWindow = `
+		<!-- Pseudo-shadow -->
+		<rect x="99" y="63" width="1002" height="502" fill="rgba(0, 0, 0, 0.2)" rx="16" ry="16" />
+		<rect x="98" y="62" width="1004" height="504" fill="rgba(0, 0, 0, 0.1)" rx="16" ry="16" />
+		<rect x="97" y="61" width="1006" height="506" fill="rgba(0, 0, 0, 0.1)" rx="16" ry="16" />
+
+		<!-- Terminal Window -->
+		<rect x="100" y="64" width="1000" height="500" rx="16" ry="16" fill="${terminalBgColor}" />
 		<circle cx="135" cy="100" r="12" fill="#FD5454" />
 		<circle cx="170" cy="100" r="12" fill="#F6B23C" />
 		<circle cx="205" cy="100" r="12" fill="#22C036" />`;
@@ -106,13 +113,14 @@ async function generateSocialImage(filename, title, siteName, authorImage, optio
 			<style>
 				${customFont}
 			</style>
-			<linearGradient id="the-gradient" x1="0" y1="0" x2="1" y2="1">
+
+			<linearGradient id="bg-gradient" x1="0" y1="0" x2="1" y2="1">
 				<stop offset="0%" stop-color="#647DEE" />
 				<stop offset="100%" stop-color="#7F53AC" />
 			</linearGradient>
 		</defs>
 
-		<rect x="0" y="0" width="1200" height="628" rx="0" ry="0" fill="${bgColor || 'url(#the-gradient)'}" />
+		<rect x="0" y="0" width="1200" height="628" rx="0" ry="0" fill="${bgColor || 'url(#bg-gradient)'}" />
 
 		${hideTerminal ? '' : terminalWindow}
 
