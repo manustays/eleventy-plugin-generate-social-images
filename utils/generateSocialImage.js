@@ -1,5 +1,3 @@
-const fs = require('fs');
-const path = require('path');
 const sharp = require("sharp");
 
 
@@ -48,24 +46,12 @@ function sanitizeHTML(text) {
 
 
 async function generateSocialImage(filename, title, siteName, authorImage, options = {}) {
-	const { outputDir, urlPath, titleColor, hideTerminal, bgColor, terminalBgColor, customSVG, customFontFilename, lineBreakAt } = options;
+	const { targetDir, urlPath, titleColor, hideTerminal, bgColor, bgGradientDef, terminalBgColor, customSVG, customFontFilename, lineBreakAt } = options;
 
-	if (!(title && outputDir && urlPath)) {
+	if (!(title && targetDir && urlPath)) {
 		console.error("eleventy-plugin-generate-social-images Error: Missing values");
 		return;
 	}
-
-	// Generate outputDir if it does not exist...
-	const sep = path.sep;
-	const targetDir = path.normalize(outputDir);
-	const initDir = path.isAbsolute(targetDir) ? sep : '';
-	targetDir.split(sep).reduce((parentDir, childDir) => {
-		const curDir = path.resolve(parentDir, childDir);
-		if (!fs.existsSync(curDir)) {
-			fs.mkdirSync(curDir);
-		}
-		return curDir;
-	}, initDir);
 
 
 	// Generate multi-line SVG text for the Title...
@@ -113,11 +99,7 @@ async function generateSocialImage(filename, title, siteName, authorImage, optio
 			<style>
 				${customFont}
 			</style>
-
-			<linearGradient id="bg-gradient" x1="0" y1="0" x2="1" y2="1">
-				<stop offset="0%" stop-color="#647DEE" />
-				<stop offset="100%" stop-color="#7F53AC" />
-			</linearGradient>
+			${bgGradientDef}
 		</defs>
 
 		<rect x="0" y="0" width="1200" height="628" rx="0" ry="0" fill="${bgColor || 'url(#bg-gradient)'}" />
